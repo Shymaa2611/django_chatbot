@@ -20,7 +20,7 @@
 }
 
 .chat-header {
-  background-color: #f2f2f2;
+  background-color: #494646;
   padding: 10px;
   border-bottom: 1px solid #ccc;
   text-align: center;
@@ -58,7 +58,7 @@ input[type="text"] {
 
 button {
   padding: 5px 10px;
-  background-color: #4CAF50;
+  background-color: #614caf;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -69,7 +69,7 @@ button {
     
     <div class="chat-container">
         <div class="chat-header">
-          <h2>Chatbot</h2>
+          <h2 style="color: white;">Django Chatbot</h2>
         </div>
         <div class="chat-box" id="chat-box">
           <div class="message received">Hello! How can I assist you today?</div>
@@ -95,10 +95,9 @@ button {
             $.ajax({
                 url: "http://127.0.0.1:8000/google_bard_response/?prompt=" + message,
                 type: 'GET',
-                dataType: 'json', // added data type
+                dataType: 'json', 
                 success: function(res) {
                     console.log(res);
-                    // alert(res);
                     appendMessage(res.message, "received");
                 }
             });
